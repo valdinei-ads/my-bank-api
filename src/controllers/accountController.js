@@ -1,4 +1,4 @@
-import express, { request, response } from 'express';
+import express from 'express';
 import { promises as fs } from 'fs';
 import path from 'path';
 
@@ -13,6 +13,8 @@ routes.post('/', async (request, response) => {
         const filePath = path.resolve('accounts.json' );
 
         const data = JSON.parse(await readFile(filePath));
+
+        const data = JSON.parse(await readFile(pathFile));
         
         account = {id: data.nextId++, ...account};
 
